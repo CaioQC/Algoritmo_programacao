@@ -24,7 +24,6 @@ int main()
     {
         printf("Noturno\n\n");
     }
-
     else if(turno == 'M')
     {
         printf("Matutino\n\n");
