@@ -10,7 +10,7 @@ int main() {
         printf("Os Jogos Olímpicos de Verão ocorreram no ano de %d.\n", ano);
     } 
     
-    else if (ano >= 1930 && ano <= 2022) {
+    else if (ano >= 1930 && (ano - 1930) % 4 == 0){
         printf("A Copa do Mundo de Futebol ocorreu no ano de %d.\n", ano);
     } 
 
