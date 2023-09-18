@@ -16,9 +16,6 @@ int main(){
         aumento = salario * 0.07;
     } else if (nivel == 'c') {
         aumento = salario * 0.08;
-    } else {
-        return 1;
-    }
 
     float novo_salario = salario + aumento;
 
