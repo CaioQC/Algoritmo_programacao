@@ -6,7 +6,7 @@ int main(){
 
     scanf("%d", &senha_certa);
 
-    while (1) {
+    while (senha_inserida != senha_certa) {
         scanf("%d", &senha_inserida);
 
         if (senha_inserida == senha_certa) {
