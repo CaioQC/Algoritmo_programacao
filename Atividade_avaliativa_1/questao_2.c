@@ -6,10 +6,6 @@ int main(){
 
     scanf("%d", &numero);
 
-    if (numero < 0 || numero > 1000000000) {
-        return 1;
-    }
-
     if (numero % 2 == 0) {
         printf("%d eh par\n", numero);
     } else {
