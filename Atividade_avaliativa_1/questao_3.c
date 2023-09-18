@@ -11,7 +11,7 @@ int main(){
 
         if (senha_inserida == senha_certa) {
             printf("senha valida!\n");
-            break;
+
         } else {
             printf("senha invalida!\n");
         }
