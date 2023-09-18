@@ -4,12 +4,12 @@ int main(){
     
     char nivel;
     float salario;
+    float aumento;
 
     scanf(" %c", &nivel);
     
     scanf("%f", &salario);
 
-    float aumento;
     if (nivel == 'a') {
         aumento = salario * 0.05;
     } else if (nivel == 'b') {
