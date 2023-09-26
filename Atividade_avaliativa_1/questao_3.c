@@ -5,6 +5,7 @@ int main(){
     int senha_certa, senha_inserida;
 
     scanf("%d", &senha_certa);
+    printf("senha cadastrada: %d", senha_certa);
 
     while (senha_inserida != senha_certa) {
         scanf("%d", &senha_inserida);
