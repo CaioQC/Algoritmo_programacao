@@ -25,13 +25,13 @@ int main() {
                 resultado[i][j] = matrizA[i][j] + matrizB[i][j];
             }
         }
-    } else if (strcmp(operacao, "sub") == 0) { // Subtração
+    } else if (strcmp(operacao, "sub") == 0) {
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
                 resultado[i][j] = matrizA[i][j] - matrizB[i][j];
             }
         }
-    } else if (strcmp(operacao, "mult") == 0) { // Multiplicação
+    } else if (strcmp(operacao, "mult") == 0) {
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
                 resultado[i][j] = 0;
