@@ -16,15 +16,15 @@ int main() {
     struct Time times[2];
 
     for (int i = 0; i < 2; i++) {
-        // Leitura do nome do time
-        scanf("%s", times[i].nome);
+        // Leitura do nome do time com espaço
+        scanf(" %30[^\n]", times[i].nome);
 
         // Leitura dos jogadores
         for (int j = 0; j < 11; j++) {
             char nome[31];
             char posicao;
             int forca;
-            scanf("%s;%c;%d", nome, &posicao, &forca);
+            scanf(" %30[^;];%c;%d", nome, &posicao, &forca);
 
             strcpy(times[i].jogadores[j].nome, nome);
             times[i].jogadores[j].posicao = posicao;
