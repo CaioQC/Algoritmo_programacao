@@ -62,8 +62,6 @@ int main() {
         printf("%s eh mais forte\n", times[0].nome);
     } else if (forcaTimes[1] > forcaTimes[0]) {
         printf("%s eh mais forte\n", times[1].nome);
-    } else {
-        printf("Times tem a mesma forca\n");
     }
 
     return 0;
