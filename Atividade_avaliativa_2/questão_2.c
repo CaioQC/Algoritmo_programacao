@@ -16,10 +16,8 @@ int main() {
     struct Time times[2];
 
     for (int i = 0; i < 2; i++) {
-        // Leitura do nome do time com espaço
         scanf(" %30[^\n]", times[i].nome);
 
-        // Leitura dos jogadores
         for (int j = 0; j < 11; j++) {
             char nome[31];
             char posicao;
@@ -32,7 +30,6 @@ int main() {
         }
     }
 
-    // Cálculo da força ponderada
     double forcaTimes[2] = {0.0, 0.0};
     for (int i = 0; i < 2; i++) {
         for (int j = 0; j < 11; j++) {
@@ -53,7 +50,6 @@ int main() {
         forcaTimes[i] /= 100.0;
     }
 
-    // Saída
     for (int i = 0; i < 2; i++) {
         printf("%s: %.2lf de forca\n", times[i].nome, forcaTimes[i]);
     }
