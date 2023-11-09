@@ -52,7 +52,7 @@ int printBinary(int n) {
 }
 
 int printHexadecimal(int n) {
-    char *hexaDeciNum = (char *)malloc(sizeof(char) * 100);
+    char * hexaDeciNum = (char *)malloc(sizeof(char) * 100);
     int i = 0;
     while (n != 0) {
         int temp = 0;
