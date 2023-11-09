@@ -5,7 +5,6 @@ int main() {
     int meses;
     double aporte, taxa, montante;
 
-    printf("Digite o número de meses, o aporte mensal e a taxa de retorno mensal: ");
     scanf("%d %lf %lf", &meses, &aporte, &taxa);
 
     for (int i = 1; i <= meses; i++) {
