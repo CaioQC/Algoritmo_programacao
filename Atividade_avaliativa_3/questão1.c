@@ -44,14 +44,14 @@ int romanToDecimal(char *num) {
     return res;
 }
 
-void printBinary(int n) {
+int printBinary(int n) {
     if (n > 1) {
         printBinary(n / 2);
     }
     printf("%d", n % 2);
 }
 
-void printHexadecimal(int n) {
+int printHexadecimal(int n) {
     char *hexaDeciNum = (char *)malloc(sizeof(char) * 100);
     int i = 0;
     while (n != 0) {
@@ -73,7 +73,6 @@ void printHexadecimal(int n) {
 
 int main() {
     char roman[1000];
-    printf("Digite um número romano: ");
     scanf("%s", roman);
     int decimal = romanToDecimal(roman);
 
