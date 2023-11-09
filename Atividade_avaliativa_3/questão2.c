@@ -9,7 +9,7 @@ int main() {
 
     for (int i = 1; i <= meses; i++) {
         montante = (aporte * (1 + taxa)) *((pow(1 + taxa, i) - 1) / taxa);
-        printf("Montante ao fim do mês %d: R$ %.2lf\n", i, montante);
+        printf("Montante ao fim do mEs %d: R$ %.2lf\n", i, montante);
     }
 
     return 0;
