@@ -20,7 +20,7 @@ int value(char r) {
     return -1;
 }
 
-int romanToDecimal(char *num) {
+int romanoPraDecimal(char *num) {
     int res = 0;
     int i;
 
@@ -44,9 +44,9 @@ int romanToDecimal(char *num) {
     return res;
 }
 
-int printBinary(int n) {
+int printBinario(int n) {
     if (n > 1) {
-        printBinary(n / 2);
+        printBinario(n / 2);
     }
     printf("%d", n % 2);
 }
@@ -72,14 +72,14 @@ int printHexadecimal(int n) {
 }
 
 int main() {
-    char roman[1000];
-    scanf("%s", roman);
-    int decimal = romanToDecimal(roman);
+    char romano[1000];
+    scanf("%s", romano);
+    int decimal = romanoPraDecimal(romano);
 
-    printf("%s na base 2: ", roman);
-    printBinary(decimal);
-    printf("\n%s na base 10: %d\n", roman, decimal);
-    printf("%s na base 16: ", roman);
+    printf("%s na base 2: ", romano);
+    printBinario(decimal);
+    printf("\n%s na base 10: %d\n", romano, decimal);
+    printf("%s na base 16: ", romano);
     printHexadecimal(decimal);
     printf("\n");
 
