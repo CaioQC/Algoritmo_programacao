@@ -3,24 +3,26 @@
 #include <stdlib.h>
 
 int value(char r) {
-    if (r == 'I')
+    // Função para obter o valor numérico de um caractere romano (considerando maiúsculas ou minúsculas)
+    if (r == 'I' || r == 'i')
         return 1;
-    if (r == 'V')
+    if (r == 'V' || r == 'v')
         return 5;
-    if (r == 'X')
+    if (r == 'X' || r == 'x')
         return 10;
-    if (r == 'L')
+    if (r == 'L' || r == 'l')
         return 50;
-    if (r == 'C')
+    if (r == 'C' || r == 'c')
         return 100;
-    if (r == 'D')
+    if (r == 'D' || r == 'd')
         return 500;
-    if (r == 'M')
+    if (r == 'M' || r == 'm')
         return 1000;
     return -1;
 }
 
 int romanoPraDecimal(char *num) {
+    // Função para converter um número romano para decimal
     int res = 0;
     int i;
 
@@ -52,7 +54,7 @@ int printBinario(int n) {
 }
 
 int printHexadecimal(int n) {
-    char * hexaDeciNum = (char *)malloc(sizeof(char) * 100);
+    char *hexaDeciNum = (char *)malloc(sizeof(char) * 100);
     int i = 0;
     while (n != 0) {
         int temp = 0;
@@ -61,7 +63,7 @@ int printHexadecimal(int n) {
             hexaDeciNum[i] = temp + 48;
             i++;
         } else {
-            hexaDeciNum[i] = temp + 55;
+            hexaDeciNum[i] = temp + 87; //
             i++;
         }
         n = n / 16;
@@ -74,6 +76,7 @@ int printHexadecimal(int n) {
 int main() {
     char romano[1000];
     scanf("%s", romano);
+
     int decimal = romanoPraDecimal(romano);
 
     printf("%s na base 2: ", romano);
