@@ -8,9 +8,7 @@ int validarPlaca(char *placa) {
 
     if (comprimento == 8 && placa[3] == '-' && isalpha(placa[0]) && isalpha(placa[1]) && isalpha(placa[2])) {
         formatoValido = 1;
-    }
-    
-    else if (comprimento == 7 && isalpha(placa[0]) && isalpha(placa[1]) && isalpha(placa[2]) &&
+    } else if (comprimento == 7 && isalpha(placa[0]) && isalpha(placa[1]) && isalpha(placa[2]) &&
                isdigit(placa[3]) && isalpha(placa[4]) && isdigit(placa[5]) && isdigit(placa[6])) {
         formatoValido = 1;
     }
@@ -19,8 +17,13 @@ int validarPlaca(char *placa) {
 }
 
 int validarDia(char *dia) {
-    char diasValidos[7][15] = {"SEGUNDA-FEIRA", "TERCA-FEIRA", "QUARTA-FEIRA", "QUINTA-FEIRA", "SEXTA-FEIRA", "SABADO", "DOMINGO"};
+    char diasValidos[7][15] = {"segunda-feira", "terca-feira", "quarta-feira", "quinta-feira", "sexta-feira", "sabado", "domingo"};
     int i, diaValido = 0;
+
+    // Converte o dia para minúsculas
+    for (i = 0; dia[i]; i++) {
+        dia[i] = tolower(dia[i]);
+    }
 
     for (i = 0; i < 7; i++) {
         if (strcmp(dia, diasValidos[i]) == 0) {
@@ -41,30 +44,37 @@ int imprimirResultado(char *placa, char *dia, int placaValida, int diaValido, in
         printf("Dia da semana invalido\n");
     }
 
-    if (podeCircular && (strcmp(dia, "SABADO") == 0 || strcmp(dia, "DOMINGO") == 0)) {
+    if (podeCircular && (strcmp(dia, "sabado") == 0 || strcmp(dia, "domingo") == 0)) {
         printf("Nao ha proibicao no fim de semana\n");
     } else if (podeCircular) {
         printf("%s pode circular %s\n", placa, dia);
     } else if (placaValida && diaValido) {
         printf("%s nao pode circular %s\n", placa, dia);
     }
+
+    return 0;
 }
 
 int verificarRodizio(char *placa, char *dia) {
     int terminacao = placa[strlen(placa) - 1] - '0';
-    int diaInvalido = 1;
+    int diaInvalido = 0;
 
-    if (strcmp(dia, "SEGUNDA-FEIRA") == 0 && (terminacao == 0 || terminacao == 1)) {
-        diaInvalido = 0;
-    } else if (strcmp(dia, "TERCA-FEIRA") == 0 && (terminacao == 2 || terminacao == 3)) {
-        diaInvalido = 0;
-    } else if (strcmp(dia, "QUARTA-FEIRA") == 0 && (terminacao == 4 || terminacao == 5)) {
-        diaInvalido = 0;
-    } else if (strcmp(dia, "QUINTA-FEIRA") == 0 && (terminacao == 6 || terminacao == 7)) {
-        diaInvalido = 0;
-    } else if (strcmp(dia, "SEXTA-FEIRA") == 0 && (terminacao == 8 || terminacao == 9)) {
-        diaInvalido = 0;
-    } else if (strcmp(dia, "SABADO") == 0 || strcmp(dia, "DOMINGO") == 0) {
+    // Converte o dia para minúsculas
+    for (int i = 0; dia[i]; i++) {
+        dia[i] = tolower(dia[i]);
+    }
+
+    if (strcmp(dia, "segunda-feira") == 0 && (terminacao == 0 || terminacao == 1)) {
+        diaInvalido = 1;  // Corrigido para 1 quando não pode circular
+    } else if (strcmp(dia, "terca-feira") == 0 && (terminacao == 2 || terminacao == 3)) {
+        diaInvalido = 1;
+    } else if (strcmp(dia, "quarta-feira") == 0 && (terminacao == 4 || terminacao == 5)) {
+        diaInvalido = 1;
+    } else if (strcmp(dia, "quinta-feira") == 0 && (terminacao == 6 || terminacao == 7)) {
+        diaInvalido = 1;
+    } else if (strcmp(dia, "sexta-feira") == 0 && (terminacao == 8 || terminacao == 9)) {
+        diaInvalido = 1;
+    } else if (strcmp(dia, "sabado") == 0 || strcmp(dia, "domingo") == 0) {
         diaInvalido = 0;
     }
 
@@ -75,10 +85,7 @@ int main() {
     char placa[20];
     char dia[15];
 
-    printf("Digite a placa do veiculo: ");
     scanf("%s", placa);
-
-    printf("Digite o dia da semana: ");
     scanf("%s", dia);
 
     int placaValida = validarPlaca(placa);
