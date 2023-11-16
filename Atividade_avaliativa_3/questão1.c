@@ -4,19 +4,19 @@
 
 int value(char r) {
     // Função para obter o valor numérico de um caractere romano (considerando maiúsculas ou minúsculas)
-    if (r == 'I' || r == 'i')
+    if (r == 'I')
         return 1;
-    if (r == 'V' || r == 'v')
+    if (r == 'V')
         return 5;
-    if (r == 'X' || r == 'x')
+    if (r == 'X')
         return 10;
-    if (r == 'L' || r == 'l')
+    if (r == 'L')
         return 50;
-    if (r == 'C' || r == 'c')
+    if (r == 'C')
         return 100;
-    if (r == 'D' || r == 'd')
+    if (r == 'D')
         return 500;
-    if (r == 'M' || r == 'm')
+    if (r == 'M')
         return 1000;
     return -1;
 }
