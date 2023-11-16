@@ -17,13 +17,8 @@ int validarPlaca(char *placa) {
 }
 
 int validarDia(char *dia) {
-    char diasValidos[7][15] = {"segunda-feira", "terca-feira", "quarta-feira", "quinta-feira", "sexta-feira", "sabado", "domingo"};
+    char diasValidos[7][15] = {"SEGUNDA-FEIRA", "TERCA-FEIRA", "QUARTA-FEIRA", "QUINTA-FEIRA", "SEXTA-FEIRA", "SABADO", "DOMINGO"};
     int i, diaValido = 0;
-
-    // Converte o dia para minúsculas
-    for (i = 0; dia[i]; i++) {
-        dia[i] = tolower(dia[i]);
-    }
 
     for (i = 0; i < 7; i++) {
         if (strcmp(dia, diasValidos[i]) == 0) {
@@ -59,13 +54,12 @@ int verificarRodizio(char *placa, char *dia) {
     int terminacao = placa[strlen(placa) - 1] - '0';
     int diaInvalido = 0;
 
-    // Converte o dia para minúsculas
     for (int i = 0; dia[i]; i++) {
         dia[i] = tolower(dia[i]);
     }
 
     if (strcmp(dia, "segunda-feira") == 0 && (terminacao == 0 || terminacao == 1)) {
-        diaInvalido = 1;  // Corrigido para 1 quando não pode circular
+        diaInvalido = 1;
     } else if (strcmp(dia, "terca-feira") == 0 && (terminacao == 2 || terminacao == 3)) {
         diaInvalido = 1;
     } else if (strcmp(dia, "quarta-feira") == 0 && (terminacao == 4 || terminacao == 5)) {
